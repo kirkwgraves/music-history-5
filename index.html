@@ -1,37 +1,42 @@
 <!DOCTYPE html>
-<html>
-
-	<head>
-	  <title>Music History App</title>
-	  <link rel="stylesheet" type="text/css" href="main.css">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Music History App</title>
+	  <link rel="stylesheet" href="bower_components/dist/css/bootstrap.min.css">
+	  <link rel="stylesheet" type="text/css" href="sass/main.scss">
 	</head>
 
-	<body>
+<body class="container-fluid">
+  <div class="row">
 
-	  <nav>
-	    <a href="#" class="selected">View Music</a> |
-	    <a href="#">Add Music</a> |
-	    <a href="#">Profile</a>
+		<header class="col-md-12">
 
-	  </nav>
+		  <nav>
+		    <a href="#" class="selected">View Music</a> |
+		    <a href="#">Add Music</a> |
+		    <a href="#">Profile</a>
+		  </nav>
 
-	  <nav class="hidden">
-	    <a href="#" class="selected">View Music</a> |
-	    <a href="#">Add Music</a> |
-	    <a href="#">Profile</a>
+		</header>
+	</div>
+	
+	<div class="row">
 
-	  </nav>
+	  <section class="filter col-md-4">
 
-		<div class="flex_container">
-
-		  <div class="selector">
-		    <form action="form.html" method="post">
-
+	    <form action="form.html" method="post">
+	      
+	      <div class="song-length row">
 		      <label for="song_length">Song Length:</label>
-		      <input type="range" name="song_length" min="0" max="240" step="1" value="0" />
+		      <input class="col-md-12" type="range" name="song_length" min="0" max="240" step="1" value="0">
+		    </div>
 
+				<div class="artist row">
 		      <label for="artist">Artist:</label>
-		      <input list="artist_list" name="artist" placeholder="Artist">
+		      <input class="col-md-12" list="artist_list" name="artist" placeholder="Artist">
 			      <datalist id="artist_list">
 			        <option value="Kanye West" />
 		          <option value="Beach House" />
@@ -39,63 +44,70 @@
 		          <option value="New Order" />
 			        <option value="Charles Mingus" />
 			      </datalist>
+			    </div>
 
+	      <div class="album row">
 		      <label for="album">Album:</label>
-		      <input list="album_list" name="album" placeholder="Album">
+		      <input class="col-md-12" list="album_list" name="album" placeholder="Album">
 			      <datalist id="album_list">
 			        <option value="My Beautiful Dark Twisted Fantasy - Kanye West" />
-			        <option value="Bloom - Beach House" />
+			        <option value="Teen Dream - Beach House" />
 			        <option value="Our Mother the Mountain - Townes Van Zandt" />
 			        <option value="Power, Corruption, Lies - New Order" />
 			        <option value="Mingus Ah Um - Charles Mingus" />
 			      </datalist>
+			    </div>
+				
+				<div class="genre row">
+					<label class="col-md-12" for="genre-list">Genre</label>
+					
+					<ul class="genre-column col-md-6">
+						<li class="col-md-12">
+							<input type="checkbox" name="rock" id="rock">
+							<label for="rock">Rock</label>
+		      	</li>
+		      	<li class="col-md-12">
+							<input type="checkbox" name="pop" id="pop">
+							<label for="pop">Pop</label>
+		      	</li>
+		      	<li class="col-md-12">
+							<input type="checkbox" name="blues" id="blues">
+							<label for="blues">Blues</label>
+		      	</li>
+		      </ul>
 
-		      <label for="genre">Genre:</label>
-		      <div class="checkbox_wrapper">
-						<div class="checkbox">
-			        <input type="checkbox" name="rock" value="rock" />
-			        <p>Rock</p>
-			      </div>
-						<div class="checkbox">
-			        <input type="checkbox" name="pop" value="pop" />
-			        <p>Pop</p>
-						</div>
-						<div class="checkbox">
-			        <input type="checkbox" name="blues" value="blues" />
-			        <p>Blues</p>
-						</div>
-						<div class="checkbox">
-			        <input type="checkbox" name="classical" value="classical" />
-			        <p>Classical</p>
-						</div>
-						<div class="checkbox">
-			        <input type="checkbox" name="jazz" value="jazz" />
-			        <p>Jazz</p>
-						</div>
-						<div class="checkbox">
-			        <input type="checkbox" name="hop_hop" value="hip_hop" />
-			        <p>Hip-Hop</p>
-						</div>
-		      </div>
+	      <ul class="genre-column col-md-6">
+	      	<li class="col-md-12">
+	      		<input type="checkbox" name="classical" id="classical">
+	      		<label for="classical">Classical</label>
+	      	</li>
+	      	<li class="col-md-12">
+	      		<input type="checkbox" name="jazz" id="jazz">
+	      		<label for="jazz">Jazz</label>
+	      	</li>
+	      	<li class="col-md-12">
+	      		<input type="checkbox" name="hip-hop" id="hip-hop">
+	      		<label for="hip-hop">Hip-Hop</label>
+	      	</li>
+		    </div>
 
-		      <button>Filter</button>
-		  	</form>
-		  </div>
+	    	<button>Filter</button>
+	  	</form>
+	  </section>
+	</div>
+
+  <div class="history">
+   	<button id="addSongs">Populate Songs</button>
+		<div class="wrapper" id="populateSongs">
+
+
+
 		</div>
-
-		  <div class="history">
-		   	<button id="addSongs">Output Songs</button>
-		  		<div class="wrapper" id="songsOutput">
-
-
-		
-		  		</div>
-		  
-		  <div>
-		  	<button id="addMoreSongs">Add More Songs</button>
-		  </div>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="main.js"></script>
-	</body>
+  </div>
+  <section>
+  	<button id="addMoreSongs">Add More Songs</button>
+  	<ul></ul>
+  </section>
+<script src="bower_components/requirejs/require.js"></script>
+</body>
 </html>
