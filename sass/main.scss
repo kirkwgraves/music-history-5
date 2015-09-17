@@ -1,7 +1,42 @@
-$font-stack:    Helvetica, sans-serif;
-$primary-color: #333;
+.container-fluid {
+	padding-top: 70px;
+	max-width: 1000px;
+}
 
-body {
-  font: 100% $font-stack;
-  color: $primary-color;
+.jumbotron {
+	border: 3px solid black;
+	background-color: #FF6EB4;
+	text-align: center;
+}
+
+.form_inputs {
+	background-color: #EBEBEB;
+	border: 3px solid black;
+}
+
+.artist-select {
+	padding-top: 15px;
+	padding-bottom: 20px;
+}
+
+.album-select {
+	padding-bottom: 20px;
+}
+
+.song_display {
+	background-color: #EBEBEB;		
+	border: 3px solid black;
+}
+
+.genre-column {
+	list-style: none;
+}
+
+.filer {
+	margin-left: 50%;
+	margin-right: 50%;
+}
+
+.history {
+	float: right;
 }
