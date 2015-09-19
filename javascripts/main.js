@@ -17,7 +17,7 @@ function($, Handlebars, populateSongs, unique) {
     });
 
     require(['hbs!../templates/artists'], function(artistTemplate) {
-     console.log('uniqueArtists', uniqueArtists);
+      console.log('uniqueArtists', uniqueArtists);
 
       $("#artistDrop").html(artistTemplate({artist: uniqueArtists}));
 

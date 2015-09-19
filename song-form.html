@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Music Form</title>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+	<form>
+  <div class="form-group">
+    <label for="songName">Title</label>
+    <input type="text" class="form-control" id="songName" placeholder="Song">
+  </div>
+  <div class="form-group">
+    <label for="artistName">Artist</label>
+    <input type="text" class="form-control" id="artistName" placeholder="Artist">
+  </div>
+  <div class="form-group">
+    <label for="albumName">Album</label>
+    <input type="text" id="albumName" placeholder="Album">
+  </div>
+  <div class="form-group">
+	  <label for="albumYear">Year</label>
+	  <input type="text" id="albumYear" placeholder="Year">
+  </div>
+</form>
+ <button id="addSong" type="submit" class="btn btn-default">Submit</button>
+<script data-main="./javascripts/entryAdd" src="lib/bower_components/requirejs/require.js"></script>
+</body>
+</html>

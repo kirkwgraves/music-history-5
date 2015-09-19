@@ -1,9 +1,9 @@
 define(['lodash'], function(_) {
 	return function(allSongsArray) {
 
-		var uniqueArtists = _.chain(allSongsArray).uniq('artist').pluck('artist')	.value();
+	var uniqueArtists = _.chain(allSongsArray).pluck('artist').uniq().value();
 
-  	var uniqueAlbums = _.chain(allSongsArray).uniq('album').pluck('album').value();
+  var uniqueAlbums = _.chain(allSongsArray).pluck('album').uniq().value();
 
   	return {
   		uniqueArtists: uniqueArtists,
